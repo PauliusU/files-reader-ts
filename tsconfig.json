@@ -3,6 +3,7 @@
   "compilerOptions": {
     "outDir": "./dist",
     "target": "ES2020", // Node.js 14 fully supports ES2020
+    "esModuleInterop": true,
     "module": "CommonJS",
     "sourceMap": true,
     "declaration": true,
@@ -30,7 +31,7 @@
   "include": [
     "./src/**/*",
     "./test/**/*"
-  ],
+, ".vscode/redux/reducer.ts"  ],
   "exclude": [
     "node_modules"
   ],
