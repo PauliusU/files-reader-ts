@@ -1,0 +1,37 @@
+{
+  // Common TS settings. For build tsconfig.build.json is used.
+  "compilerOptions": {
+    "outDir": "./dist",
+    "target": "ES2020", // Node.js 14 fully supports ES2020
+    "module": "CommonJS",
+    "sourceMap": true,
+    "declaration": true,
+    "noEmitOnError": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "strict": true,
+    // "alwaysStrict": true, // true if strict
+    // "noImplicitAny": true, // true if strict
+    // "noImplicitThis": true, // true if strict
+    // "strictBindCallApply": true, // true if strict
+    // "strictFunctionTypes": true, // true if strict
+    // "strictNullChecks": true, // true if strict
+    // "strictPropertyInitialization": true, // true if strict
+    // "useUnknownInCatchVariables": true, // true if strict
+    "allowUnreachableCode": false,
+    "allowUnusedLabels": false,
+    "noImplicitReturns": true,
+    "noFallthroughCasesInSwitch": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "suppressExcessPropertyErrors": false,
+    "suppressImplicitAnyIndexErrors": false,
+  },
+  "include": [
+    "./src/**/*",
+    "./test/**/*"
+  ],
+  "exclude": [
+    "node_modules"
+  ],
+}
