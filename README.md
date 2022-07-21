@@ -4,6 +4,8 @@
 [![Code Style: Google](https://img.shields.io/badge/code%20style-google-blueviolet.svg)](https://github.com/google/gts)
 [![MIT license](https://img.shields.io/badge/License-MIT-blue.svg)](https://github.com/PauliusU/files-reader-ts/blob/master/LICENSE)
 
+Exercise for creating endpoints related to reading of directory files and saving their status (active / deleted) into a Redux state object.
+
 **TABLE OF CONTENTS:**
 
 - [files-reader-ts](#files-reader-ts)
