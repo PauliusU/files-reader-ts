@@ -41,7 +41,7 @@ yarn
 4. Run startup script
 
 ```bash
-npm run start
+yarn start
 ```
 
 ## Requirements
