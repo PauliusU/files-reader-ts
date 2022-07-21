@@ -31,7 +31,7 @@
   "include": [
     "./src/**/*",
     "./test/**/*"
-, ".vscode/redux/reducer.ts"  ],
+  ],
   "exclude": [
     "node_modules"
   ],
