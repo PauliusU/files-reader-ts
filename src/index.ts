@@ -1,4 +1,5 @@
 import express from 'express';
+import store from './redux/store';
 
 // Server setup
 const PORT = 3000;
@@ -16,10 +17,8 @@ app.patch('scan', (_, res) => {
   res.end(JSON.stringify({name: 'File_name.jpg', active: true}));
 });
 
-app.get('download-state', (_, res) => {
-  // TODO download the current existing state object
-  res.setHeader('Content-Type', 'application/json');
-  res.end(JSON.stringify({state: '...state'}));
+app.get('/download-state', (_, res) => {
+  res.json(store.getState());
 });
 
 // Start the Express server
