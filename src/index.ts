@@ -5,18 +5,28 @@ import store from './redux/store';
 const PORT = 3000;
 const app = express();
 
-app.get('list', (_, res) => {
+/**
+ * Returns full list of scanned files
+ */
+app.get('/list', (_, res) => {
   // TODO return full list of files from state
   res.setHeader('Content-Type', 'application/json');
   res.end(JSON.stringify({name: 'File_name.jpg', active: true}));
 });
 
-app.patch('scan', (_, res) => {
+/**
+ * Scans files and saves result to the Redux state object, marking old files
+ * {active: false} if they are not available anymore.
+ */
+app.patch('/scan', (_, res) => {
   // eslint-disable-next-line max-len
   // TODO scan defined PATH and update redux state object, marking old files {active: false} if they are not available anymore
-  res.end(JSON.stringify({name: 'File_name.jpg', active: true}));
+  res.json({name: 'File_name.jpg', active: true});
 });
 
+/**
+ * Download the current existing state object
+ */
 app.get('/download-state', (_, res) => {
   res.json(store.getState());
 });
