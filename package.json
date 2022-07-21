@@ -7,6 +7,8 @@
   "scripts": {
     "build": "tsc -p tsconfig.build.json",
     "dev": "tsc -w -p tsconfig.build.json",
+    "start": "node .",
+    "prestart": "npm run build",
     "lint": "eslint src",
     "test": "jest"
   },
