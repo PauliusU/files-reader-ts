@@ -12,7 +12,7 @@
     "lint": "eslint src",
     "test": "jest"
   },
-  "keywords": [],
+  "license": "MIT",
   "jest": {
     "preset": "ts-jest",
     "collectCoverage": true,
