@@ -2,8 +2,8 @@
   "name": "files-reader-ts",
   "version": "1.0.0",
   "description": "Exercise for creating endpoints related to reading of directory files and saving their status (active / deleted) into a Redux state object",
-  "main": "dist/index.js",
-  "types": "dist/index.d.ts",
+  "main": "dist/server.js",
+  "types": "dist/server.d.ts",
   "scripts": {
     "build": "tsc -p tsconfig.build.json",
     "dev": "tsc -w -p tsconfig.build.json",
