@@ -1,3 +1,4 @@
+/** @module services.filesReader */
 import 'dotenv/config';
 import * as fs from 'node:fs';
 

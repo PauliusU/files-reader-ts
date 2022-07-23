@@ -1,10 +1,9 @@
-import store from '../redux/store';
+/** @module routes.root */
 import express from 'express';
+import store from '../redux/store';
 
 // eslint-disable-next-line new-cap
 export const rootRouter = express.Router();
-
-// rootRouter.use(express.json());
 
 /**
  * Returns full list of scanned files
