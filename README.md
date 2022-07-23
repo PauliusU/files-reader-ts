@@ -10,9 +10,9 @@ Redux state object.
 **TABLE OF CONTENTS:**
 
 - [files-reader-ts](#files-reader-ts)
-    - [Technologies used](#technologies-used)
-    - [How to launch](#how-to-launch)
-    - [Requirements](#requirements)
+  - [Technologies used](#technologies-used)
+  - [How to launch](#how-to-launch)
+  - [Requirements](#requirements)
 
 ## Technologies used
 
@@ -24,7 +24,7 @@ Redux state object.
 
 ## How to launch
 
-**TLDR:** set `DIRECTORY_PATH` environment variable in .env file and launch start script `yarn start`.
+**TLDR:** set `FILES_READER_PATH` environment variable in .env file and launch start script `yarn start`.
 
 Step-by-step guide:
 
@@ -52,7 +52,7 @@ yarn
 mv .env.example .env
 ```
 
-5. Set desired path as `DIRECTORY_PATH` environment variable in `.env`
+5. Set desired path as `FILES_READER_PATH` environment variable in `.env`
 
 6. Run startup script
 

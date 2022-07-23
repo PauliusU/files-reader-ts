@@ -27,15 +27,16 @@ export const isUnixHiddenPath = (path: string): boolean => {
  * @param {string} envVariable Environment variable to read directory path from
  * @return {string}
  */
-export const getDirPathFromEnv = (envVariable = 'DIRECTORY_PATH'): string => {
-  const path = process.env?.[envVariable];
+export const getDirPathFromEnv =
+  (envVariable = 'FILES_READER_PATH'): string => {
+    const path = process.env?.[envVariable];
 
-  if (!path) {
-    throw new Error('Environment variable for directory path not found');
-  }
-  if (!fs.existsSync(path)) throw new Error('Path does not exist');
-  const isDirectory = fs.statSync(path).isDirectory();
-  if (!isDirectory) throw new Error('Path is not a directory');
+    if (!path) {
+      throw new Error('Environment variable for directory path not found');
+    }
+    if (!fs.existsSync(path)) throw new Error('Path does not exist');
+    const isDirectory = fs.statSync(path).isDirectory();
+    if (!isDirectory) throw new Error('Path is not a directory');
 
-  return path;
-};
+    return path;
+  };

@@ -19,15 +19,15 @@ describe('isUnixHiddenPath()', () => {
 });
 
 describe('getDirPathFromEnv()', () => {
-  it('Throws error if DIRECTORY_PATH is not set (if is falsy)', () => {
-    process.env.DIRECTORY_PATH = '';
+  it('Throws error if FILES_READER_PATH is not set (if is falsy)', () => {
+    process.env.FILES_READER_PATH = '';
     expect(() => getDirPathFromEnv()).toThrowError();
     expect(() => getDirPathFromEnv()).toThrow(
         'Environment variable for directory path not found',
     );
   });
   it('Throws error if provided path does not exist', () => {
-    process.env.DIRECTORY_PATH = '/someNonExisting/path/';
+    process.env.FILES_READER_PATH = '/someNonExisting/path/';
     expect(() => getDirPathFromEnv()).toThrow('Path does not exist');
   });
 });
