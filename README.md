@@ -24,7 +24,7 @@ Exercise for creating endpoints related to reading of directory files and saving
 
 **TLDR:** set `DIRECTORY_PATH` environment variable in .env file and launch start script `yarn start`.
 
-Step by step guide:
+Step by step quide:
 
 1. Clone the repo
 
