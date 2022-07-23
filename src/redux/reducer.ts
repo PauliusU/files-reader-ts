@@ -1,18 +1,13 @@
 /** @module redux.reducer */
+import {Action} from './action';
 
 type File = {
   name: string,
   active: boolean
 };
-type Action = {
-  type: string,
-  payload: {
-    fileNames: string[]
-  }
-};
 
 const reducer = (state: File[] = [], action: Action) => {
-  if (action.type === 'scanned') {
+  if (action.type === 'SCAN') {
     // Set all files to {active: false}
     for (const storedFile of state) {
       storedFile.active = false;
