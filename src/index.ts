@@ -1,9 +1,11 @@
 import express from 'express';
 import store from './redux/store';
+import {getDirPathFromEnv, getFilesList} from './reader';
 
 // Server setup
 const PORT = 3000;
 const app = express();
+let files = [];
 
 /**
  * Returns full list of scanned files
@@ -34,5 +36,9 @@ app.get('/download-state', (_, res) => {
 // Start the Express server
 app.listen(PORT, () => {
   // TODO read defined directory files and save it to redux state object
+  const directoryPath = getDirPathFromEnv();
+  files = getFilesList(directoryPath);
+
   console.log(`Express server is running on port ${PORT}`);
+  console.log(`Initial files list: ${JSON.stringify(files)}`);
 });
