@@ -1,4 +1,4 @@
-import {isUnixHiddenPath} from '../src/reader';
+import {isUnixHiddenPath} from '../src/services/filesReader';
 
 describe('isUnixHiddenPath()', () => {
   it('Returns true if unix path points to hidden item', () => {
