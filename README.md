@@ -22,6 +22,10 @@ Exercise for creating endpoints related to reading of directory files and saving
 
 ## How to launch
 
+**TLDR:** set `DIRECTORY_PATH` environment variable in .env file and launch start script `yarn start`.
+
+Step by step quide:
+
 1. Clone the repo
 
 ```bash
@@ -40,7 +44,15 @@ cd files-reader-ts
 yarn
 ```
 
-4. Run startup script
+4. Rename `.env.example` to `.env`
+
+```bash
+mv .env.example .env
+```
+
+5. Set desired path as `DIRECTORY_PATH` environment variable in `.env`
+
+6. Run startup script
 
 ```bash
 yarn start
@@ -48,8 +60,8 @@ yarn start
 
 ## Requirements
 
-- [ ] 1. When the program starts, it should read defined directory files and save it to redux state object.
-- [ ] 2. Program should be able to return full list of files from state on http://127.0.0.1:3000/list
+1. When the program starts, it should read defined directory files and save it to redux state object.
+2. Program should be able to return full list of files from state on http://127.0.0.1:3000/list
 
 ```json
 {
@@ -58,8 +70,8 @@ yarn start
 }
 ```
 
-- [ ] 3. Program should have functionality to scan defined PATH again. After rescan, redux state object should be updated, marking old files {active: false} if they are not available anymore. http://127.0.0.1:3000/scan
-- [ ] 4. Program should be able to download the current existing state object. http://127.0.0.1:3000/download-state
+3. Program should have functionality to scan defined PATH again. After rescan, redux state object should be updated, marking old files {active: false} if they are not available anymore. http://127.0.0.1:3000/scan
+4. Program should be able to download the current existing state object. http://127.0.0.1:3000/download-state
 
 ```json
 [{
