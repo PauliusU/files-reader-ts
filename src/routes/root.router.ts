@@ -1,6 +1,7 @@
 /** @module routes.root */
 import express from 'express';
 import store from '../redux/store';
+import {saveFilesInStore} from '../services/filesReader';
 
 // eslint-disable-next-line new-cap
 export const rootRouter = express.Router();
@@ -10,12 +11,9 @@ export const rootRouter = express.Router();
  */
 rootRouter.get('/list', (_, res) => {
   try {
-    // TODO return full list of files from state
-    // res.setHeader('Content-Type', 'application/json');
-    // res.end(JSON.stringify({name: 'File_name.jpg', active: true}));
-    // res.end({name: 'File_name.jpg', active: true});
-    const result = {name: 'File_name.jpg', active: true};
-    res.send(result);
+    const files = store.getState();
+    const activeFiles = files.filter((file) => file.active);
+    res.status(200).send(activeFiles);
   } catch (err: any) {
     res.status(500).send(err.message);
   }
@@ -27,9 +25,8 @@ rootRouter.get('/list', (_, res) => {
  */
 rootRouter.patch('/scan', (_, res) => {
   try {
-    // eslint-disable-next-line max-len
-    // TODO scan defined PATH and update redux state object, marking old files {active: false} if they are not available anymore
-    res.json({name: 'File_name.jpg', active: true});
+    saveFilesInStore();
+    res.status(200).send({success: true});
   } catch (err: any) {
     res.status(500).send(err.message);
   }
@@ -40,8 +37,7 @@ rootRouter.patch('/scan', (_, res) => {
  */
 rootRouter.get('/download-state', (_, res) => {
   try {
-    // res.json({name: 'File_name.jpg', active: true});
-    res.json(store.getState());
+    res.status(200).send(store.getState());
   } catch (err: any) {
     res.status(500).send(err.message);
   }

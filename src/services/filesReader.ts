@@ -1,6 +1,7 @@
 /** @module services.filesReader */
 import 'dotenv/config';
 import * as fs from 'node:fs';
+import store from '../redux/store';
 
 /**
  * Reads directory and returns list of files in that directory
@@ -40,3 +41,16 @@ export const getDirPathFromEnv =
 
     return path;
   };
+
+export const saveFilesInStore = () => {
+  const directoryPath = getDirPathFromEnv();
+  const files = getFilesList(directoryPath);
+
+  store.dispatch({
+    type: 'scanned',
+    payload: {
+      fileNames: files,
+    },
+  });
+};
+

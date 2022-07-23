@@ -1,7 +1,8 @@
 /** @module server */
 import express from 'express';
+import store from './redux/store';
 import {rootRouter} from './routes/root.router';
-import {getDirPathFromEnv, getFilesList} from './services/filesReader';
+import {saveFilesInStore} from './services/filesReader';
 
 // Server setup
 const PORT = 3000;
@@ -12,10 +13,8 @@ app.use('/', rootRouter);
 
 // Start the Express server
 app.listen(PORT, () => {
-  const directoryPath = getDirPathFromEnv();
-  const files = getFilesList(directoryPath);
-  // TODO save directory files list to redux state object
-
   console.log(`Express server started at http://localhost:${PORT}`);
-  console.log(`Initial files list: ${JSON.stringify(files)}`);
+  saveFilesInStore();
+
+  console.log(`Initial files list: ${JSON.stringify(store.getState())}`);
 });
