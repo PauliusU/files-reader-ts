@@ -4,7 +4,7 @@ import store from '../redux/store';
 import {saveFilesInStore} from '../services/filesReader';
 
 // eslint-disable-next-line new-cap
-export const rootRouter = express.Router();
+const rootRouter = express.Router();
 
 /**
  * Returns full list of scanned files
@@ -42,3 +42,5 @@ rootRouter.get('/download-state', (_, res) => {
     res.status(500).send(err.message);
   }
 });
+
+export default rootRouter;

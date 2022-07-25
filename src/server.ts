@@ -1,7 +1,7 @@
 /** @module server */
 import express from 'express';
 import store from './redux/store';
-import {rootRouter} from './routes/root.router';
+import rootRouter from './routes/root.router';
 import {saveFilesInStore} from './services/filesReader';
 
 // Server setup
