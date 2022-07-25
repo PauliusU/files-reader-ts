@@ -1,7 +1,7 @@
 /** @module redux.reducer */
 import {Action} from './action';
 
-type File = {
+export type File = {
   name: string,
   active: boolean
 };
