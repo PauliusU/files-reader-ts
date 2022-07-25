@@ -7,7 +7,7 @@ import {saveFilesInStore} from '../services/filesReader';
 const rootRouter = express.Router();
 
 /**
- * Returns full list of scanned files
+ * Returns full list of active scanned files
  */
 rootRouter.get('/list', (_, res) => {
   try {
