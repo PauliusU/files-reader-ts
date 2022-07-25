@@ -13,7 +13,7 @@ rootRouter.get('/list', (_, res) => {
   try {
     const files = store.getState();
     const activeFiles = files.filter((file) => file.active);
-    res.status(200).send(activeFiles);
+    res.status(200).json(activeFiles);
   } catch (err: any) {
     res.status(500).send(err.message);
   }
@@ -26,7 +26,7 @@ rootRouter.get('/list', (_, res) => {
 rootRouter.patch('/scan', (_, res) => {
   try {
     saveFilesInStore();
-    res.status(200).send({success: true});
+    res.status(200).json({success: true});
   } catch (err: any) {
     res.status(500).send(err.message);
   }
@@ -37,7 +37,7 @@ rootRouter.patch('/scan', (_, res) => {
  */
 rootRouter.get('/download-state', (_, res) => {
   try {
-    res.status(200).send(store.getState());
+    res.status(200).json(store.getState());
   } catch (err: any) {
     res.status(500).send(err.message);
   }
