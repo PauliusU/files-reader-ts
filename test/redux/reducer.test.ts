@@ -15,6 +15,7 @@ describe('reducer()', () => {
       {name: 'file2.jpg', active: true},
     ]);
   });
+
   it('Updates existing state correctly', () => {
     const state = [
       {name: 'file1.jpg', active: true},
